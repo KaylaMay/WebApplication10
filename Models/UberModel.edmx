@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UberDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Admin_id" />
+          </Key>
+          <Property Name="Admin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Admin_email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Admin_password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="cust_id" />
+          </Key>
+          <Property Name="cust_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Driver">
+          <Key>
+            <PropertyRef Name="Driver_Id" />
+          </Key>
+          <Property Name="Driver_Id" Type="int" Nullable="false" />
+          <Property Name="Driver_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Driver_surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Driver_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Driver_password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Driver_phone" Type="nchar" MaxLength="10" />
+          <Property Name="hire_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="sender" Type="nvarchar" MaxLength="50" />
+          <Property Name="sender_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="sender_phone" Type="nchar" MaxLength="10" />
+          <Property Name="sender_msg" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cust_id" Type="int" />
+          <Property Name="prod_id" Type="int" />
+          <Property Name="product_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="product_price" Type="float" />
+          <Property Name="order_date" Type="datetime" />
+          <Property Name="Delivery_Address" Type="nvarchar(max)" />
+          <Property Name="Delivery_Status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cust_id" Type="int" />
+          <Property Name="account_no" Type="nchar" MaxLength="16" />
+          <Property Name="account_holder" Type="nvarchar" MaxLength="50" />
+          <Property Name="exp_date" Type="datetime" />
+          <Property Name="CCV" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="prod_id" />
+          </Key>
+          <Property Name="prod_id" Type="int" Nullable="false" />
+          <Property Name="prod_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="rest_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="prod_description" Type="nvarchar(max)" />
+          <Property Name="prod_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="prod_price" Type="float" />
+          <Property Name="prod_pic" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Restaurant">
+          <Key>
+            <PropertyRef Name="rest_id" />
+          </Key>
+          <Property Name="rest_id" Type="int" Nullable="false" />
+          <Property Name="rest_location" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="rest_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="rest_pic" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="UberDataModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Driver" EntityType="Self.Driver" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mail" EntityType="Self.Mail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Restaurant" EntityType="Self.Restaurant" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UberDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="cust_id" />
+          </Key>
+          <Property Name="cust_id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="UberDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Admins" EntityType="UberDataModel.Admin" />
+          <EntitySet Name="Restaurants" EntityType="UberDataModel.Restaurant" />
+          <EntitySet Name="Mails" EntityType="UberDataModel.Mail" />
+          <EntitySet Name="Products" EntityType="UberDataModel.Product" />
+          <EntitySet Name="Orders" EntityType="UberDataModel.Order" />
+          <EntitySet Name="Payments" EntityType="UberDataModel.Payment" />
+          <FunctionImport Name="checklogin">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Drivers" EntityType="UberDataModel.Driver" />
+        </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Admin_id" />
+          </Key>
+          <Property Name="Admin_id" Type="Int32" Nullable="false" />
+          <Property Name="Admin_password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Admin_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Restaurant">
+          <Key>
+            <PropertyRef Name="rest_id" />
+          </Key>
+          <Property Name="rest_id" Type="Int32" Nullable="false" />
+          <Property Name="rest_location" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="rest_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="first_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="last_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rest_pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Mail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="sender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sender_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sender_phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="sender_msg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="prod_id" />
+          </Key>
+          <Property Name="prod_id" Type="Int32" Nullable="false" />
+          <Property Name="prod_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prod_price" Type="Double" />
+          <Property Name="prod_pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="prod_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prod_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="rest_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="order_date" Type="DateTime" Precision="3" />
+          <Property Name="cust_id" Type="Int32" />
+          <Property Name="prod_id" Type="Int32" />
+          <Property Name="product_price" Type="Double" />
+          <Property Name="Delivery_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="account_no" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+          <Property Name="exp_date" Type="DateTime" Precision="3" />
+          <Property Name="CCV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="account_holder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cust_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Driver">
+          <Key>
+            <PropertyRef Name="Driver_Id" />
+          </Key>
+          <Property Name="Driver_Id" Type="Int32" Nullable="false" />
+          <Property Name="Driver_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Driver_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Driver_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Driver_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Driver_phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="hire_date" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UberDataModelStoreContainer" CdmEntityContainer="UberDataEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="UberDataModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="UberDataModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Admin_email" ColumnName="Admin_email" />
+                <ScalarProperty Name="Admin_password" ColumnName="Admin_password" />
+                <ScalarProperty Name="Admin_id" ColumnName="Admin_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Restaurants">
+            <EntityTypeMapping TypeName="UberDataModel.Restaurant">
+              <MappingFragment StoreEntitySet="Restaurant">
+                <ScalarProperty Name="rest_pic" ColumnName="rest_pic" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="rest_name" ColumnName="rest_name" />
+                <ScalarProperty Name="rest_location" ColumnName="rest_location" />
+                <ScalarProperty Name="rest_id" ColumnName="rest_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mails">
+            <EntityTypeMapping TypeName="UberDataModel.Mail">
+              <MappingFragment StoreEntitySet="Mail">
+                <ScalarProperty Name="sender_msg" ColumnName="sender_msg" />
+                <ScalarProperty Name="sender_phone" ColumnName="sender_phone" />
+                <ScalarProperty Name="sender_email" ColumnName="sender_email" />
+                <ScalarProperty Name="sender" ColumnName="sender" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="UberDataModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="rest_name" ColumnName="rest_name" />
+                <ScalarProperty Name="prod_description" ColumnName="prod_description" />
+                <ScalarProperty Name="prod_type" ColumnName="prod_type" />
+                <ScalarProperty Name="prod_pic" ColumnName="prod_pic" />
+                <ScalarProperty Name="prod_price" ColumnName="prod_price" />
+                <ScalarProperty Name="prod_name" ColumnName="prod_name" />
+                <ScalarProperty Name="prod_id" ColumnName="prod_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="UberDataModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Delivery_Status" ColumnName="Delivery_Status" />
+                <ScalarProperty Name="Delivery_Address" ColumnName="Delivery_Address" />
+                <ScalarProperty Name="product_price" ColumnName="product_price" />
+                <ScalarProperty Name="prod_id" ColumnName="prod_id" />
+                <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="UberDataModel.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+                <ScalarProperty Name="account_holder" ColumnName="account_holder" />
+                <ScalarProperty Name="CCV" ColumnName="CCV" />
+                <ScalarProperty Name="exp_date" ColumnName="exp_date" />
+                <ScalarProperty Name="account_no" ColumnName="account_no" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drivers">
+            <EntityTypeMapping TypeName="UberDataModel.Driver">
+              <MappingFragment StoreEntitySet="Driver">
+                <ScalarProperty Name="hire_date" ColumnName="hire_date" />
+                <ScalarProperty Name="Driver_phone" ColumnName="Driver_phone" />
+                <ScalarProperty Name="Driver_password" ColumnName="Driver_password" />
+                <ScalarProperty Name="Driver_email" ColumnName="Driver_email" />
+                <ScalarProperty Name="Driver_surname" ColumnName="Driver_surname" />
+                <ScalarProperty Name="Driver_name" ColumnName="Driver_name" />
+                <ScalarProperty Name="Driver_Id" ColumnName="Driver_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

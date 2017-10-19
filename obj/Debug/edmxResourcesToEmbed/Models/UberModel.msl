@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UberDataModelStoreContainer" CdmEntityContainer="UberDataEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="UberDataModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="UberDataModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Admin_email" ColumnName="Admin_email" />
+          <ScalarProperty Name="Admin_password" ColumnName="Admin_password" />
+          <ScalarProperty Name="Admin_id" ColumnName="Admin_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurants">
+      <EntityTypeMapping TypeName="UberDataModel.Restaurant">
+        <MappingFragment StoreEntitySet="Restaurant">
+          <ScalarProperty Name="rest_pic" ColumnName="rest_pic" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="rest_name" ColumnName="rest_name" />
+          <ScalarProperty Name="rest_location" ColumnName="rest_location" />
+          <ScalarProperty Name="rest_id" ColumnName="rest_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mails">
+      <EntityTypeMapping TypeName="UberDataModel.Mail">
+        <MappingFragment StoreEntitySet="Mail">
+          <ScalarProperty Name="sender_msg" ColumnName="sender_msg" />
+          <ScalarProperty Name="sender_phone" ColumnName="sender_phone" />
+          <ScalarProperty Name="sender_email" ColumnName="sender_email" />
+          <ScalarProperty Name="sender" ColumnName="sender" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="UberDataModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="rest_name" ColumnName="rest_name" />
+          <ScalarProperty Name="prod_description" ColumnName="prod_description" />
+          <ScalarProperty Name="prod_type" ColumnName="prod_type" />
+          <ScalarProperty Name="prod_pic" ColumnName="prod_pic" />
+          <ScalarProperty Name="prod_price" ColumnName="prod_price" />
+          <ScalarProperty Name="prod_name" ColumnName="prod_name" />
+          <ScalarProperty Name="prod_id" ColumnName="prod_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="UberDataModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Delivery_Status" ColumnName="Delivery_Status" />
+          <ScalarProperty Name="Delivery_Address" ColumnName="Delivery_Address" />
+          <ScalarProperty Name="product_price" ColumnName="product_price" />
+          <ScalarProperty Name="prod_id" ColumnName="prod_id" />
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="UberDataModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="account_holder" ColumnName="account_holder" />
+          <ScalarProperty Name="CCV" ColumnName="CCV" />
+          <ScalarProperty Name="exp_date" ColumnName="exp_date" />
+          <ScalarProperty Name="account_no" ColumnName="account_no" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="UberDataModel.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="hire_date" ColumnName="hire_date" />
+          <ScalarProperty Name="Driver_phone" ColumnName="Driver_phone" />
+          <ScalarProperty Name="Driver_password" ColumnName="Driver_password" />
+          <ScalarProperty Name="Driver_email" ColumnName="Driver_email" />
+          <ScalarProperty Name="Driver_surname" ColumnName="Driver_surname" />
+          <ScalarProperty Name="Driver_name" ColumnName="Driver_name" />
+          <ScalarProperty Name="Driver_Id" ColumnName="Driver_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

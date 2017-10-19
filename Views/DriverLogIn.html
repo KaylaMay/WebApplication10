@@ -1,0 +1,29 @@
+﻿<style>
+    body {
+        background-color: azure;
+    }
+</style>
+
+<div class="row">
+    <nav class="jumbotron text-center" style="background-color:azure">
+        <h1><font color="solid grey">Driver Login</font></h1>
+    </nav>
+    <div class="col-md-6 col-md-offset-3">
+        <div ng-controller="DriverLoginController">
+            <form>
+                <div class="form-group">
+                    <label><b>Username</b></label>
+                    <input type="text" ng-model="Driver_email" class="form-control input-lg" placeholder="Enter Username" name="Driver_email" required>
+                </div>
+                <div class="form-group">
+                    <label><b>Password</b></label>
+                    <input type="password" ng-model="Driver_password" class="form-control input-lg" placeholder="Enter Password" name="Driver_password" required>
+                </div>
+                <div>
+                    <button ng-click="DriverLog()" style="background-color:#808080;" class="btn btn-success form-control input-lg">SigIn</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

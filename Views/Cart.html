@@ -1,0 +1,44 @@
+﻿<style>
+    body {
+        background-color: azure;
+    }
+    .jumbotron {
+        padding-top:10px;
+        padding-bottom:0px;
+        height:60px;
+    }
+</style>
+<div class="jumbotron">
+    <a class="navbar-brand" href="#"><font color="black"><b>UBER</b> </font><font color="Red">EATS</font></a>
+    <h3 class="top-left text-center"><font color=red>My Shopping Cart</font></h3><br/>
+    <br/>
+</div>
+<div ng-controller="CartController">
+    <table class="table table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Quantity</th>
+                <th>      </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cart in selectedItems">
+                <td>{{cart.prod_name}}</td>
+                <td>{{cart.prod_price | currency : "R"}}</td>
+                <th>{{cart.count}}</th>
+                <td>
+                    <button ng-click="Remove(cart)" ng-show="shoppingCart.length>0" class="btn btn-sm btn-info" style="background-color:#165c8a">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="bottom-right">
+        <br/>
+    <span class="center-block alert alert-success"style="background-color:azure">Total Price:R {{checkOutTot}}</span>
+    <br/>
+    <button  ng-click="CheckOut('CheckOut.html')"  class="btn btn-sm btn-info" style="background-color:#165c8a">CheckOut<i class="fa fa-shopping-cart"></i>
+    </button>
+        </div>
+</div>

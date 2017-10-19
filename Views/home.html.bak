@@ -1,0 +1,120 @@
+<head>
+    
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="engine0/style.css" />
+	<script type="text/javascript" src="engine0/jquery.js"></script>
+	<!-- End WOWSlider.com HEAD section -->
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="engine5/style.css" />
+	<!--script type="text/javascript" src="engine5/jquery.js"></script-->
+	<!-- End WOWSlider.com HEAD section --></head>
+<style>
+    body {
+        background-color: azure;
+    }
+</style>
+<body>
+<nav ng-show="!navshow" class="navbar navbar-light" style="background-color:#999; ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><font color="black"><b>UBER</b> </font><font color="Aqua">EATS</font></a>
+        </div>
+        <ul class="nav navbar-nav" ng-show="!navshow" style="background-color:#bee6dd;">
+            <li><a href="#!Search" class="text-center text-danger"><span class="glyphicon glyphicon-search"><font color="Red"></font></span></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-show="!show">
+            <li><a href="#!register" class="text-right text-danger"><span class="glyphicon glyphicon-user"><font color="Red"></font></span>Register</a></li>
+            <li><a href="#!login" class="text-right text-danger"><span class="glyphicon glyphicon-log-in"><font color="Red"></font></span>SignIn</a></li>
+            <li><a href="#!Admin" class="text-center text-danger"><span class="glyphicon glyphicon-queen"><font color="Red"></font></span>Admin</a></li>
+            <li><a href="#Cart" class="text-center text-danger"><span class="glyphicon glyphicon-shopping-cart"><font color="Green"></font></span></a></li>
+        </ul>
+    </div>
+</nav>
+	<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+	
+	<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+	
+	<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+	
+	<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+	
+	<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+	
+
+
+	<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+	
+	<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+	<div id="wowslider-container5">
+	<div class="ws_images"><ul>
+		<li><img src="data5/images/1014011ehires.jpg" alt="" title="" id="wows5_0"/></li>
+		<li><img src="data5/images/1383815688017.jpg" alt="" title="" id="wows5_1"/></li>
+		<li><img src="data5/images/20150710_bus_11043280_i1.jpg" alt="" title="" id="wows5_2"/></li>
+		<li><img src="data5/images/2sistersfoodgrouproastbanner5.jpg" alt="" title="" id="wows5_3"/></li>
+		<li><img src="data5/images/71296.jpg" alt="" title="" id="wows5_4"/></li>
+		<li><img src="data5/images/8bdd17902fcab6ec43e089950ee31e70pubfoodrestaurantfood.jpg" alt="" title="" id="wows5_5"/></li>
+		<li><img src="data5/images/ce63f8fae20206c595a52938c91d9caa.jpg" alt="" title="" id="wows5_6"/></li>
+		<li><img src="data5/images/corn.jpg" alt="" title="" id="wows5_7"/></li>
+		<li><img src="data5/images/fastfoodbraindisease.jpg" alt="" title="" id="wows5_8"/></li>
+		<li><img src="data5/images/images.jpg" alt="" title="" id="wows5_9"/></li>
+		<li><img src="data5/images/mexicanrestaurantsnearme02589x400.jpg" alt="" title="" id="wows5_10"/></li>
+		<li><img src="data5/images/nandoschickenandchips.jpg" alt="" title="" id="wows5_11"/></li>
+		<li><img src="data5/images/nourishedkitchen_dinner1.jpg" alt="" title="" id="wows5_12"/></li>
+		<li><img src="data5/images/olive_garden_apricot_chicken.jpg" alt="" title="" id="wows5_13"/></li>
+		<li><img src="data5/images/pilecibataci144605476271296.jpg" alt="" title="" id="wows5_14"/></li>
+		<li><img src="data5/images/restauranthealthyfoodvegetablesaladdietvegetariannutritionmixvegetablesfreshlettuce55387060.jpg" alt="" title="" id="wows5_15"/></li>
+		<li><img src="data5/images/rocomamasburger.jpg" alt="" title="" id="wows5_16"/></li>
+		<li><img src="data5/images/subwayturkeyhamsandwich.jpg" alt="" title="" id="wows5_17"/></li>
+		<li><img src="data5/images/succulentfilletsteak.jpg" alt="" title="" id="wows5_18"/></li>
+		<li><img src="data5/images/sugaryrestaurantmealsredrobinbanzaings.jpg" alt="" title="" id="wows5_19"/></li>
+		<li><a href="http://wowslider.net"><img src="data5/images/thai.jpg" alt="css image gallery" title="" id="wows5_20"/></a></li>
+		<li><img src="data5/images/worstrestaurantdishocharleys.jpg" alt="" title="" id="wows5_21"/></li>
+	</ul></div>
+	<div class="ws_bullets"><div>
+		<a href="#" title=""><span><img src="data5/tooltips/1014011ehires.jpg" alt=""/>1</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/1383815688017.jpg" alt=""/>2</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/20150710_bus_11043280_i1.jpg" alt=""/>3</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/2sistersfoodgrouproastbanner5.jpg" alt=""/>4</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/71296.jpg" alt=""/>5</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/8bdd17902fcab6ec43e089950ee31e70pubfoodrestaurantfood.jpg" alt=""/>6</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/ce63f8fae20206c595a52938c91d9caa.jpg" alt=""/>7</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/corn.jpg" alt=""/>8</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/fastfoodbraindisease.jpg" alt=""/>9</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/images.jpg" alt=""/>10</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/mexicanrestaurantsnearme02589x400.jpg" alt=""/>11</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/nandoschickenandchips.jpg" alt=""/>12</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/nourishedkitchen_dinner1.jpg" alt=""/>13</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/olive_garden_apricot_chicken.jpg" alt=""/>14</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/pilecibataci144605476271296.jpg" alt=""/>15</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/restauranthealthyfoodvegetablesaladdietvegetariannutritionmixvegetablesfreshlettuce55387060.jpg" alt=""/>16</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/rocomamasburger.jpg" alt=""/>17</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/subwayturkeyhamsandwich.jpg" alt=""/>18</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/succulentfilletsteak.jpg" alt=""/>19</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/sugaryrestaurantmealsredrobinbanzaings.jpg" alt=""/>20</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/thai.jpg" alt=""/>21</span></a>
+		<a href="#" title=""><span><img src="data5/tooltips/worstrestaurantdishocharleys.jpg" alt=""/>22</span></a>
+	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">jquery carousel slider</a> by WOWSlider.com v8.8</div>
+	<div class="ws_shadow"></div>
+	</div>	
+	<script type="text/javascript" src="engine5/wowslider.js"></script>
+	<script type="text/javascript" src="engine5/script.js"></script>
+	<!-- End WOWSlider.com BODY section --><div class="jumbotron jumbotron-fluid nav navbar-fixed-bottom text-left" style="background-color:#2c3838" >
+        <div class="container-fluid">
+            <a href="#!AboutUs" class="text-right text-danger">About Us ||</a>
+            <a href="#!ContactUs" class="text-right text-danger">Contact Us ||</a>
+            <a href="#!restaurant" class="text-right text-danger">Become a Partner</a>
+        </div>
+</div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+</body>

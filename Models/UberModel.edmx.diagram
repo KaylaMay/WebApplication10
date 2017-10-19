@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="47db8cd5a60e4ed49c46883a1e0fe432" Name="Diagram1">
+        <EntityTypeShape EntityType="UberDataModel.Customer" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UberDataModel.Admin" Width="1.5" PointX="4.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UberDataModel.Restaurant" Width="1.5" PointX="0.5" PointY="3.75" />
+        <EntityTypeShape EntityType="UberDataModel.Mail" Width="1.5" PointX="2.625" PointY="4" />
+        <EntityTypeShape EntityType="UberDataModel.Product" Width="1.5" PointX="6.5" PointY="4.125" />
+        <EntityTypeShape EntityType="UberDataModel.Order" Width="1.5" PointX="5.875" PointY="0.5" />
+        <EntityTypeShape EntityType="UberDataModel.Payment" Width="1.5" PointX="3.125" PointY="0.75" />
+        <EntityTypeShape EntityType="UberDataModel.Driver" Width="1.5" PointX="3.375" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,26 @@
+﻿<style>
+    body {
+        background-color: azure;
+    }
+</style>
+<nav class="navbar navbar-light" style="background-color:#808080; ">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"><font color="Aqua"><b>UBER</b> </font><font color="black">EATS</font></a>
+    </div>
+</nav>
+<nav class="text-center">
+    <h1><font color="solid grey">Mail Box</font></h1>
+</nav>
+<div ng-controller="MailDataController">
+    <table class="table general-table" cellspacing="40" align="center" style="width:80%">
+        <tbody>
+            <tr ng-repeat="mail in mailData">
+                <td>{{mail.sender_email}}<br/>
+                    {{mail.sender_phone}}
+                </td>
+                <td>{{mail.sender_msg}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

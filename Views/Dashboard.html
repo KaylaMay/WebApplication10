@@ -1,0 +1,85 @@
+﻿<style>
+    body {
+        background-color: azure;
+    }
+</style>
+<style>
+    /* Dropdown Button */
+    .dropbtn {
+        background-color:#0d8dbe;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {
+                background-color: aqua;
+            }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+        background-color: indigo;
+    }
+</style>
+<nav class="navbar navbar-light" style="background-color:#808080; ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><font color="Aqua"><b>UBER</b> </font><font color="black">EATS</font></a>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Add</button>
+            <div class="dropdown-content">
+                <a href="#!restaurant" class="text-center text-danger"><span class="glyphicon glyphicon-briefcase"><font color="Red"></font></span>Restaurant</a>
+                <a href="#!Products" class="text-center text-danger"><font color="Red"></font>Product</a>
+                <a href="#!Driver" class="text-center text-danger"><font color="Red"></font>Driver</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">View</button>
+            <div class="dropdown-content">
+                <a href="#!Customers" class="text-center text-danger"><font color="Red"></font>Customers</a>
+                <a href="#!restaurantData" class="text-center text-danger"><font color="Red"></font>Restaurants</a>
+                <a href="#!ProductData" class="text-center text-danger"><font color="Red"></font>Products</a>
+                <a href="#!AdminOrderData" class="text-center text-danger"><font color="Red"></font>Orders</a>
+                <a href="#!MailData" class="text-center text-danger"><font color="Red"></font>Mail</a>
+            </div>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#!home" class="text-right text-danger"><span class="glyphicon glyphicon-log-out"></span><font color="Aqua">LogOut</font></a></li>
+        </ul>
+    </div>
+</nav>
+

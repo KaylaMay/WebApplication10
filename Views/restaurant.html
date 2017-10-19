@@ -1,0 +1,55 @@
+﻿<style>
+    body {
+        background-color: azure;
+    }
+</style>    
+<nav class="text-center">
+    <h1><font color="solid grey">Add Restaurant</font></h1>
+</nav>
+<div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div ng-controller="RestaurantController">
+                <form>
+                    <div class="form-group">
+                        <label for="inputName">Location</label>
+                        <input type="text" ng-model="rest_location" class="form-control input-lg" placeholder="Location" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Restaurant Name</label>
+                        <input type="text" ng-model="rest_name" class="form-control input-lg" placeholder="Restaurant name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Phone Number</label>
+                        <input type="text" ng-model="phone" class="form-control input-lg" placeholder="Phone" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputName">Fisrt name</label>
+                        <input type="text" ng-model="first_name" class="form-control input-lg" placeholder="First name" required />
+
+                        <div class="form-group">
+                            <label for="inputName">Last name</label>
+                            <input type="text" ng-model="last_name" class="form-control input-lg" placeholder="Last name" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputName">Title</label>
+                            <input type="text" ng-model="title" class="form-control input-lg" placeholder="Title" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputName">Email</label>
+                            <input type="text" ng-model="email" class="form-control input-lg" placeholder="email" required />
+                        </div>
+                        <div class="form-group">
+                        <input type="file" fileread="rest_pic" />
+                        <img ng-src="{{rest_pic}}" width="100" height="50" alt=" ">
+                    </div>
+                    </div>
+                    <br />
+                    <div class="input">
+                        <button ng-click="AdRest()" style="background-color:#808080;" class="btn btn-success form-control input-lg">Add Restaurant</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>

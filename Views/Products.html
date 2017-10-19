@@ -1,0 +1,44 @@
+﻿<style>
+    body {
+        background-color: azure;
+    }
+</style>
+<nav class="text-center">
+    <h1><font color="solid grey">Add Product</font></h1>
+</nav>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div ng-controller="ProductController">
+            <form>
+                <div class="form-group">
+                    <label for="inputName">Product Name</label>
+                    <input type="text" ng-model="prod_name" class="form-control input-lg" placeholder="product Name" required />
+                </div>
+                <div class="form-group">
+                    <label for="inputMessage">Product Description</label>
+                    <input type="text" ng-model="prod_description" class="form-control input-lg" placeholder="Product Description" required />
+                </div>
+                <div class="form-group">
+                    <label for="inputName">Product type</label>
+                    <input type="text" ng-model="prod_type" class="form-control input-lg" placeholder="Product type" required />
+                </div>
+                <div class="form-group">
+                    <label for="inputName">Restaurant Name</label>
+                    <input type="text" ng-model="rest_name" class="form-control input-lg" placeholder="Restaurant Name" required />
+                </div>
+                <div class="form-group">
+                    <label for="inputName">Price</label>
+                    <input type="text" ng-model="prod_price" class="form-control input-lg" placeholder="Price" required />
+                </div>
+                <br />
+                <div class="form-group row">
+                    <input type="file"  fileread="prod_pic" />
+                    <img ng-src="{{prod_pic}}" width="100" height="50" alt=" " >
+                 </div>
+                <div class="input">
+                    <button ng-click="AdProduct()" style="background-color:#808080;" class="btn btn-success form-control input-lg"><span class="glyphicon glyphicon-shopping-upload"><font color="green"></font></span>Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

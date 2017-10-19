@@ -1,0 +1,103 @@
+﻿<style>
+    body {
+	background-color:azure;
+	font-family: "Roboto", sans-serif;
+    align-content:center;
+}
+    .jumbotron {
+        padding-top:10px;
+        padding-bottom:0px;
+        height:60px;        
+    
+    }
+.container-fluid{
+	min-width: 320px;
+	max-width: 400px;
+	width: 300%;
+	height: 600px;
+	margin:10% auto;
+	background-color:#6b968d;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    
+}
+
+form {
+ 
+	width: 80%;
+	margin: 10% auto;
+}
+
+form input {
+	display: block;
+	margin: 20px 0;
+	border-radius: 5px;
+	border: none;
+	font-size: 1em;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.card-number,
+.ccv,
+.account-holder,
+.Delivery_Address {
+	padding: 3px;
+}
+
+
+.card-number,
+.account-holder,
+.Delivery_Address {
+	width: 100%;
+}
+
+.expiration-date,
+.h2,
+.card-number,
+.account-holder,
+.Delivery_Address{
+	display: inline-block;
+}
+.expire-text,
+.text,
+.h2 {
+	color: white;
+	margin-bottom: 3px;
+}
+.ccv,
+.ccv{
+	margin-top:inherit;
+	display: inline-block;
+	width: 55px;
+	float: right;
+	clear: both;
+}
+</style>
+<div class="jumbotron">
+    <a class="navbar-brand" href="#"><font color="black"><b>UBER</b> </font><font color="Red">EATS</font></a>
+    <h2 class="top-left text-center"><font color="#542437">CheckOut</font></h2><br />
+    <br />
+</div>
+<div ng-controller="CheckOutController">
+    <div class="container-fluid">
+        <form>
+            <h2>Account Details</h2>
+            <p class="text">Account Number</p>
+            <input type="text" ng-model="account_no" class="card-number" maxlength="16" placeholder="Card Number" />
+            <p class="text">Account Holder</p>
+            <input type="text" ng-model="account_holder" class="account-holder" placeholder="Name" />
+            <p class="text">Expiration Date</p>
+            <input type="date" date-date-format="yyyy/mm" ng-model="exp_date" placeholder="yyyy/mm"/>
+            <input type="text" ng-model="CCV" maxlength="3" class="ccv" placeholder="CCV" />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <p class="text">Delivery Address</p>
+            <input type="text" ng-model="Delivery_Address" class="Delivery_Address" placeholder="Delivery Address" />
+            <div>
+                <button ng-click="Finish()" style="background-color:#808080;" class="btn btn-success form-control input-lg">Pay</button>
+            </div>
+        </form>
+    </div>
+</div>

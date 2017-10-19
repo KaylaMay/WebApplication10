@@ -1,0 +1,35 @@
+﻿<style>
+    body {
+        background-color: azure;
+    }
+</style>
+<nav class="navbar navbar-light" style="background-color:#808080;">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"><font color="Aqua"><b>UBER</b> </font><font color="black">EATS</font></a>
+    </div>
+</nav>
+<nav class="text-center">
+    <h1><font color="solid grey">View Restaurants</font></h1>
+</nav>
+<div ng-controller="RestDataController">
+    <table class="table table-hover general-table" cellspacing="40" align="center" style="width:80%">
+        <thead class="table-bordered">
+            <tr>
+                <th>Restaurant Logo</th>
+                <th>Restaurant id</th>
+                <th>Restaurant Name</th>
+                <th>Restaurant Location</th>
+                <th>Restaurant Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="rest in restData | filter : GetRestaurants">
+                <td><img style="width:100px; height:100px" ng-src="{{'data:image/jpg;base64,'+rest.rest_pic}}" class="img-rounded" /></td>
+                <td>{{rest.rest_id}}</td>
+                <td>{{rest.rest_name}}</td>
+                <td>{{rest.rest_location}}</td>
+                <td>{{rest.phone}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

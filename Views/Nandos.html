@@ -1,0 +1,130 @@
+﻿<style>
+        .shopping-cart {
+          width: 500px;
+          height: 423px;
+          margin: 100px inherit;
+          background: azure;
+          box-shadow: 1px 2px 3px 0px #808080;
+          border-radius: 15px;
+ 
+          display: flex;
+          flex-direction:column-reverse;
+    }
+    body {
+         background-color: azure;
+         font-weight: 100;
+    }
+    .jumbotron {
+        background-image: url(https://s3.amazonaws.com/OrderInLogos/RestaurantLandingPages/restaurant-logo-nandos.png);
+        background-repeat: repeat;
+        background-position: center;
+    }
+</style>
+<style>
+    input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        /*background-image: url('searchicon.png');*/
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+
+        input[type=text]:focus {
+            width: 100%;
+        }
+
+    .image-list-small {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0 auto;
+        text-align: center;
+        max-width: 1800px;
+        padding: 0;
+    }
+
+        .image-list-small li {
+            display: inline-block;
+            width: 190px;
+            margin: 0 12px 30px;
+        }
+
+
+    Photo .image-list-small li > a {
+        display: block;
+        text-decoration: none;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100px;
+        margin: 0;
+        padding: 0;
+        border: 4px solid #ffffff;
+        outline: 1px solid #d0d0d0;
+        box-shadow: 0 2px 1px #DDD;
+    }
+
+    .image-list-small .details {
+        margin-top: 13px;
+    }
+
+
+    Title .image-list-small .details h3 {
+        display: block;
+        font-size: 12px;
+        margin: 0 0 3px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .image-list-small .details h3 a {
+        color: #303030;
+        text-decoration: none;
+    }
+
+    .image-list-small .details .image-author {
+        display: block;
+        color: #717171;
+        font-size: 11px;
+        font-weight: normal;
+        margin: 0;
+    }
+</style>
+<nav class="navbar navbar-light">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><font color="black"><b>UBER</b> </font><font color="Aqua">EATS</font></a>
+        </div>
+        <ul class="nav navbar-nav navbar-right" ">
+            <li><a href="#!Cart" class="text-center text-danger"><span class="glyphicon glyphicon-shopping-cart">{{shoppingCart.length}}</span></a></li>
+        </ul>
+    </div>
+</nav>
+    <div class="jumbotron" style="background-color:azure;">
+        <h6 class="text-hide "><font color=red>N</font></h6><br/>
+        <h6 class="text-hide "><font color=red>A</font></h6><br />
+        <h6 class="text-hide "><font color=red>N</font></h6><br />
+    </div>
+<div ng-controller="NandosController">
+
+    <ul class="image-list-small">
+        <li ng-repeat="prod in prodData">
+            <a style="width:35%">
+                <h4>{{prod.prod_name}}</h4><br />
+                <img style="width:160px; height:150px" ng-src="{{'data:image/png;base64,'+prod.prod_pic}}" class="img-rounded" />
+            </a>
+            <div class="details">
+                <p class="image-author"><font color="solid black"><h2> {{prod.prod_price | currency : "R"}}</h2></font></p>
+                <button value="Add" ng-click="addItem(prod)" class="btn btn-sm btn-info" style="background-color:darkgrey">
+                    Add to cart
+                    <i class="fa fa-shopping-cart"></i>
+                </button>
+            </div>
+        </li>
+        </ul>
+</div>

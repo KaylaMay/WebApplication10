@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UberDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin_id" />
+    </Key>
+    <Property Name="Admin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Admin_email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Admin_password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="cust_id" />
+    </Key>
+    <Property Name="cust_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="Driver_Id" />
+    </Key>
+    <Property Name="Driver_Id" Type="int" Nullable="false" />
+    <Property Name="Driver_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Driver_surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Driver_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Driver_password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Driver_phone" Type="nchar" MaxLength="10" />
+    <Property Name="hire_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Mail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="sender" Type="nvarchar" MaxLength="50" />
+    <Property Name="sender_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="sender_phone" Type="nchar" MaxLength="10" />
+    <Property Name="sender_msg" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cust_id" Type="int" />
+    <Property Name="prod_id" Type="int" />
+    <Property Name="product_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="product_price" Type="float" />
+    <Property Name="order_date" Type="datetime" />
+    <Property Name="Delivery_Address" Type="nvarchar(max)" />
+    <Property Name="Delivery_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cust_id" Type="int" />
+    <Property Name="account_no" Type="nchar" MaxLength="16" />
+    <Property Name="account_holder" Type="nvarchar" MaxLength="50" />
+    <Property Name="exp_date" Type="datetime" />
+    <Property Name="CCV" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="prod_id" />
+    </Key>
+    <Property Name="prod_id" Type="int" Nullable="false" />
+    <Property Name="prod_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="rest_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="prod_description" Type="nvarchar(max)" />
+    <Property Name="prod_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="prod_price" Type="float" />
+    <Property Name="prod_pic" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="rest_id" />
+    </Key>
+    <Property Name="rest_id" Type="int" Nullable="false" />
+    <Property Name="rest_location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="rest_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="first_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="rest_pic" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="UberDataModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Driver" EntityType="Self.Driver" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mail" EntityType="Self.Mail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Restaurant" EntityType="Self.Restaurant" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

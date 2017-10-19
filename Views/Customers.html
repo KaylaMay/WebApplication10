@@ -1,0 +1,31 @@
+﻿<style>
+    body {
+        background-color:azure;
+    }
+</style>
+<nav class="text-center">
+    <h1><font color="solid grey">View Customers</font></h1>
+</nav>
+<div ng-controller="CustomerController">
+    <input type="text" name="Search" placeholder="Search.." ng-model="GetCustomers"/>
+    <br/><br/>
+
+    <table class="table table-hover general-table" cellspacing="40" align="center" style="width:80%">
+        <thead class="table-bordered">
+            <tr>
+                <th>Customer Id</th>
+                <th>Surname</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cust in customers | filter : GetCustomers">
+                <td>{{cust.cust_id}}</td>
+                <td>{{cust.surname}}</td>
+                <td>{{cust.name}}</td>
+                <td>{{cust.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

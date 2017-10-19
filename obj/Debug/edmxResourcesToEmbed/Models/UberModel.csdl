@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UberDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="cust_id" />
+    </Key>
+    <Property Name="cust_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="UberDataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Admins" EntityType="UberDataModel.Admin" />
+    <EntitySet Name="Restaurants" EntityType="UberDataModel.Restaurant" />
+    <EntitySet Name="Mails" EntityType="UberDataModel.Mail" />
+    <EntitySet Name="Products" EntityType="UberDataModel.Product" />
+    <EntitySet Name="Orders" EntityType="UberDataModel.Order" />
+    <EntitySet Name="Payments" EntityType="UberDataModel.Payment" />
+    <FunctionImport Name="checklogin">
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Drivers" EntityType="UberDataModel.Driver" />
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin_id" />
+    </Key>
+    <Property Name="Admin_id" Type="Int32" Nullable="false" />
+    <Property Name="Admin_password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Admin_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="rest_id" />
+    </Key>
+    <Property Name="rest_id" Type="Int32" Nullable="false" />
+    <Property Name="rest_location" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="rest_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="rest_pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Mail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="sender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sender_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sender_phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sender_msg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="prod_id" />
+    </Key>
+    <Property Name="prod_id" Type="Int32" Nullable="false" />
+    <Property Name="prod_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prod_price" Type="Double" />
+    <Property Name="prod_pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="prod_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prod_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="rest_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="order_date" Type="DateTime" Precision="3" />
+    <Property Name="cust_id" Type="Int32" />
+    <Property Name="prod_id" Type="Int32" />
+    <Property Name="product_price" Type="Double" />
+    <Property Name="Delivery_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Delivery_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="account_no" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+    <Property Name="exp_date" Type="DateTime" Precision="3" />
+    <Property Name="CCV" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="account_holder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cust_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="Driver_Id" />
+    </Key>
+    <Property Name="Driver_Id" Type="Int32" Nullable="false" />
+    <Property Name="Driver_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Driver_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Driver_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Driver_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Driver_phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="hire_date" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

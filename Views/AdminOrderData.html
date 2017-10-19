@@ -1,0 +1,37 @@
+﻿<style>
+    body {
+        background-color: azure;
+    }
+</style>
+<nav class="navbar navbar-light" style="background-color:#808080; ">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"><font color="Aqua"><b>UBER</b> </font><font color="black">EATS</font></a>
+    </div>
+</nav>
+<nav class="text-center">
+    <h1><font color="solid grey">View Orders</font></h1>
+</nav>
+<div ng-controller="OrdersDataController">
+    <table class="table table-hover general-table" cellspacing="40" align="center" style="width:80%">
+        <thead class="table-bordered">
+            <tr>
+                <th>Customer</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Delivery Address</th>
+                <th>Order Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="order in orderData">
+                <td>{{order.cust_id}}</td>
+                <td>{{order.product_name}}</td>
+                <td>{{order.product_price | currency : "R"}}</td>
+                <td>{{order.Delivery_Address}}</td>
+                <td>{{order.Delivery_Status}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

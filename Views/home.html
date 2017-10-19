@@ -1,0 +1,179 @@
+<style>
+    body {
+        background-color: azure;
+    }
+</style>
+<style>
+    /* Dropdown Button */
+.dropbtn {
+    background-color:#999;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color:aqua}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color:indigo;
+}
+    </style>
+<nav ng-show="!currentUser" class="navbar navbar-light" style="background-color:#999; ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><font color="black"><b>UBER</b> </font><font color="Aqua">EATS</font></a>
+        </div>
+        <ul class="nav navbar-nav" ng-show="!currentUser" style="background-color:#bee6dd;">
+            <li><a href="#!Search" class="text-center text-danger"><span class="glyphicon glyphicon-search"><font color="Red"></font></span></a></li>
+        </ul>
+        <div class="nav navbar-nav navbar-right" ng-show="!currentUser">
+                <div class="dropdown">
+                    <button class="dropbtn">User</button>
+                <div class="dropdown-content">
+                    <a href="#!register">Register</a>
+                    <a href="#!login">Log In</a>
+                </div>
+            </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Member</button>
+                    <div class="dropdown-content">
+                        <a href="#!Admin">Admin</a>
+                        <a href="#!DriverLogIn">Driver</a>
+                    </div>
+                    <a href="#!Cart" class="text-center text-danger"><span class="glyphicon glyphicon-shopping-cart"></span></a>    
+                </div>
+        </div>
+        <ul class="nav navbar-nav navbar-right" ng-hide="!currentUser">
+            <li><a href="#!home" class="text-right text-danger"><span class="glyphicon glyphicon-log-out"></span><font color="Aqua">LogOut</font></a></li>
+        </ul>
+</div>
+</nav>
+<style>
+    input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        /*background-image: url('searchicon.png');*/
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+
+        input[type=text]:focus {
+            width: 100%;
+        }
+
+    .image-list-small {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0 auto;
+        text-align: center;
+        max-width: 1800px;
+        padding: 0;
+    }
+
+        .image-list-small li {
+            display: inline-block;
+            width: 190px;
+            margin: 0 12px 30px;
+        }
+
+
+    Photo .image-list-small li > a {
+        display: block;
+        text-decoration: none;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100px;
+        margin: 0;
+        padding: 0;
+        border: 4px solid #ffffff;
+        outline: 1px solid #d0d0d0;
+        box-shadow: 0 2px 1px #DDD;
+    }
+
+    .image-list-small .details {
+        margin-top: 13px;
+    }
+
+
+    Title .image-list-small .details h3 {
+        display: block;
+        font-size: 12px;
+        margin: 0 0 3px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .image-list-small .details h3 a {
+        color: #303030;
+        text-decoration: none;
+    }
+
+    .image-list-small .details .image-author {
+        display: block;
+        color: #717171;
+        font-size: 11px;
+        font-weight: normal;
+        margin: 0;
+    }
+</style>
+        <nav class="text-center">
+            <h1><font color="solid black">Top 8 Restaurants</font></h1>
+        </nav>
+        <div ng-controller="SearchController">
+            <ul class="image-list-small">
+                <li ng-repeat="rest in Restaurant | filter : SearchRest">
+                    <a href="#!Nandos"> <img style="width:180px; height:180px" ng-src="{{'data:image/jpg;base64,'+ rest.rest_pic}}" /></a>
+                    <div class="details">
+                        <p class="image-author"><font color="black"><h6>{{'Gauteng'}}</h6></font><font color="red"><h6> {{rest.rest_location}}</h6></font></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+<div class="jumbotron jumbotron-fluid nav navbar-fixed-bottom text-left" style="background-color:#2c3838" >
+        <div class="container-fluid">
+            <a href="#!ContactUs" class="text-right text-danger">Contact Us ||</a>
+            <a href="#!ContactUs" class="text-right text-danger">Become a Partner</a>
+        </div>
+</div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
